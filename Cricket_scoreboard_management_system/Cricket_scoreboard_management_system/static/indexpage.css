@@ -1,0 +1,13 @@
+.nav_bar {
+    display: flex;
+    background-color: antiquewhite;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+}
+
+.nav_item {
+    margin-right: 10px; 
+
+}
