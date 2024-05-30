@@ -9,5 +9,6 @@ urlpatterns = [
     path('about/', views.Pages().about, name='about'),
     path('contact/', views.Pages().contact, name='contact'),
     path('help/', views.Pages().help, name='help'),
+    path('add_match/', views.Pages().add_match, name='add_match')
 
 ]
