@@ -17,3 +17,6 @@ class Pages:
     
     def help(self, request):
         return HttpResponse("Help page called")
+    
+    def add_match(self, request):
+        return render(request, 'add_match.html')
