@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="{% static 'add_match.css' %}">
 </head>
 <body>
-    <form action="" method="post">
-        {% csrf_token %}
-        <label for="match_number">Enter match number: </label>
-        <input type="text" name="match_number">
-        <br><br>
-        <label for="match_location">Enter match location: </label>
-        <input type="text" name="match_location" >
-        <br><br>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="hehe_div">
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="match_number">Enter match number: </label>
+            <input type="text" name="match_number">
+            <br><br>
+            <label for="match_location">Enter match location: </label>
+            <input type="text" name="match_location" >
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
