@@ -4,21 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Match</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'add_match.css' %}">
+    <!-- {% load static %} -->
+    <!-- <link rel="stylesheet" href="{% static 'add_match.css' %}"> -->
+    <style>
+        .main_div{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            background-color: aliceblue;
+        }
+
+        .first_div{
+            flex: 15%;
+            background-color: aqua;
+        }
+
+        .second_div{
+            flex: 85%;
+            background-color: antiquewhite;
+            display: flex;
+            align-items: left;
+        }
+
+        .team1_div{
+            width: 50%;
+            background-color: aquamarine;
+        }
+
+        .team2_div{
+            width: 50%;
+            background-color: beige;
+        }
+    </style>
 </head>
-<body>
-    <div class="hehe_div">
-        <form action="" method="post">
-            {% csrf_token %}
-            <label for="match_number">Enter match number: </label>
-            <input type="text" name="match_number">
-            <br><br>
-            <label for="match_location">Enter match location: </label>
-            <input type="text" name="match_location" >
-            <br><br>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+<body>    
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="main_div">
+            <div class="first_div">
+                <div class="hehe_div">
+                    <label for="match_number">Enter match number: </label>
+                    <input type="text" name="match_number" required>
+                    <br><br>
+                    <label for="match_location">Enter match location: </label>
+                    <input type="text" name="match_location" required>
+                    <br><br>
+                    <label for="match_over">Enter number of overs: </label>
+                    <input type="text" name="match_over" required>
+                    <br><br>
+                </div>
+            </div>
+            <div class="second_div">
+                <div class="team1_div">
+                    For Team 1
+                    <br><br>
+                    <label for="team1_select">Team: </label>
+                    <select name="team1_select" required>
+                        <option value="">Select team:</option>
+                        <option value="Team 1">Team 1</option>
+                        <option value="Team 2">Team 2</option>
+                    </select>
+                    <br><br>
+                    <label for="team1_name">Enter team 1 name: </label>
+                    <input type="text" name="team1_name" required>
+                    <br><br>
+                    <label for="team1_coach">Enter team 1 coach: </label>
+                    <input type="text" name="team1_coach" required>
+                    <br><br>
+                    <label for="team1_homeground">Enter team 1 homeground: </label>
+                    <input type="text" name="team1_homeground" required>
+                    <br><br>
+                    <span>Enter player name:</span>
+                    <br><br>
+                    <label for="team1_player1">player1: </label>
+                    <input type="text" name="team1_player1" required>
+                    <label for="team1_player1_role">Role: </label>
+                    <select name="team1_player1_role" required>
+                        <option value="">Select role:</option>
+                        <option value="BT">Batsman</option>
+                        <option value="B">Bowler</option>
+                        <option value="AR">All rounder</option>
+                    </select>
+                    <br><br>
+                    <label for="team1_player2">player2: </label>
+                    <input type="text" name="team1_player2" required>
+                    <label for="team1_player2_role">Role: </label>
+                    <select name="team1_player2_role" required>
+                        <option value="">Select role:</option>
+                        <option value="BT">Batsman</option>
+                        <option value="B">Bowler</option>
+                        <option value="AR">All rounder</option>
+                    </select>
+                    <br><br>
+                    <label for="team1_player3">player3: </label>
+                    <input type="text" name="team1_player3" required>
+                    <label for="team1_player3_role">Role: </label>
+                    <select name="team1_player3_role" required>
+                        <option value="">Select role:</option>
+                        <option value="BT">Batsman</option>
+                        <option value="B">Bowler</option>
+                        <option value="AR">All rounder</option>
+                    </select>
+                </div>
+                <div class="team2_div">
+                    For Team 2
+                    <br><br>
+                    <label for="team2_select">Team: </label>
+                    <select name="team2_select" required>
+                        <option value="">Select team:</option>
+                        <option value="Team 1">Team 1</option>
+                        <option value="Team 2">Team 2</option>
+                    </select>
+                    <br><br>
+                    <label for="team2_name">Enter team 2 name: </label>
+                    <input type="text" name="team2_name" required>
+                    <br><br>
+                    <label for="team2_coach">Enter team 2 coach: </label>
+                    <input type="text" name="team2_coach" required>
+                    <br><br>
+                    <label for="team2_homeground">Enter team 2 homeground: </label>
+                    <input type="text" name="team2_homeground" required>
+                    <br><br>
+                    <span>Enter player name:</span>
+                    <br><br>
+                    <label for="team2_player1">player1: </label>
+                    <input type="text" name="team2_player1" required>
+                    <label for="team2_player1_role">Role: </label>
+                    <select name="team2_player1_role" required>
+                        <option value="">Select role:</option>
+                        <option value="BT">Batsman</option>
+                        <option value="B">Bowler</option>
+                        <option value="AR">All rounder</option>
+                    </select>
+                    <br><br>
+                    <label for="team2_player2">player2: </label>
+                    <input type="text" name="team2_player2" required>
+                    <label for="team2_player2_role">Role: </label>
+                    <select name="team2_player2_role" required>
+                        <option value="">Select role:</option>
+                        <option value="BT">Batsman</option>
+                        <option value="B">Bowler</option>
+                        <option value="AR">All rounder</option>
+                    </select>
+                    <br><br>
+                    <label for="team2_player3">player3: </label>
+                    <input type="text" name="team2_player3" required>
+                    <label for="team2_player3_role">Role: </label>
+                    <select name="team2_player3_role" required>
+                        <option value="">Select role:</option>
+                        <option value="BT">Batsman</option>
+                        <option value="B">Bowler</option>
+                        <option value="AR">All rounder</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
