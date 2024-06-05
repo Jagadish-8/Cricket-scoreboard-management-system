@@ -17,10 +17,7 @@ def contact(request):
     return HttpResponse("Contact page called")
     
 def help(request):
-    return HttpResponse("Help page called")
-    
-
-from .models import Match
+    return HttpResponse("Help page called")    
 
 def add_match(request):
     if request.method == "POST":
@@ -51,11 +48,11 @@ def add_match(request):
         team1.save()
 
         for i in range(1, 4):
-            player_name = request.POST.get(f'player{i}_team1')
+            player_name = request.POST.get(f'team1_player{i}')
             player_role = request.POST.get(f'team1_player{i}_role')
             if player_name:
                 player = Player(
-                    player_team = 1,
+                    player_team = team1,
                     player_name = player_name,
                     match_number = match,
                     player_role = player_role
@@ -78,20 +75,24 @@ def add_match(request):
         team2.save()
 
         for i in range(1, 4):
-            player_name = request.POST.get(f'player{i}_team2')
+            player_name = request.POST.get(f'team2_player{i}')
             player_role = request.POST.get(f'team2_player{i}_role')
             if player_name:
                 player = Player(
-                    player_team = 2,
+                    player_team = team2,
                     player_name = player_name,
                     match_number = match,
                     player_role = player_role
                 )
                 player.save()
 
-        return render(request, 'add_match.html')
+        return redirect('scoreboard')
 
     else:
         pass
     
     return render(request, 'add_match.html')
+
+
+def scoreboard(request):
+    return render(request, "scoreboard.html")
