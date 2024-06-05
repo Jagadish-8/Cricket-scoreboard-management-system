@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main_div{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: left;
+        }
+
+        .first_div {
+            width: 50%;
+            background-color: antiquewhite;
+        }
+
+        .second_div{
+            width: 50%;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="main_div">
+            <div class="first_div">
+                For Team 1
+                <br><br>
+                <label for="team_select">Team: </label>
+                <select name="team_select">
+                    <option value="">Select team:</option>
+                    <option value="Team 1">Team 1</option>
+                    <option value="Team 2">Team 2</option>
+                </select>
+                <br><br>
+                <label for="team1_name">Enter team 1 name: </label>
+                <input type="text" name="team1_name" required>
+                <br><br>
+                <label for="team1_coach">Enter team 1 coach: </label>
+                <input type="text" name="team1_coach" required>
+                <br><br>
+                <label for="team1_homeground">Enter team 1 homeground: </label>
+                <input type="text" name="team1_homeground" required>
+                <br><br>
+                <span>Enter player name:</span>
+                <br><br>
+                <label for="team1_player1">player1: </label>
+                <input type="text" name="team1_player1">
+                <label for="team1_player1_role">Role: </label>
+                <select name="team1_player1_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team1_player2">player2: </label>
+                <input type="text" name="team1_player2">
+                <label for="team1_player2_role">Role: </label>
+                <select name="team1_player2_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team1_player3">player3: </label>
+                <input type="text" name="team1_player3">
+                <label for="team1_player3_role">Role: </label>
+                <select name="team1_player3_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <!-- <br><br>
+                <label for="team1_player4">player4: </label>
+                <input type="text" name="team1_player4">
+                <label for="team1_player4_role">Role: </label>
+                <select name="team1_player4_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team1_player5">player5: </label>
+                <input type="text" name="team1_player5">
+                <label for="team1_player5_role">Role: </label>
+                <select name="team1_player5_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team1_player6">player6: </label>
+                <input type="text" name="team1_player6">
+                <label for="team1_player6_role">Role: </label>
+                <select name="team1_player6_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team1_player7">player7: </label>
+                <input type="text" name="team1_player7">
+                <label for="team1_player7_role">Role: </label>
+                <select name="team1_player7_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team1_player8">player8: </label>
+                <input type="text" name="team1_player8">
+                <label for="team1_player8_role">Role: </label>
+                <select name="team1_player8_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team1_player9">player9: </label>
+                <input type="text" name="team1_player9">
+                <label for="team1_player9_role">Role: </label>
+                <select name="team1_player9_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team1_player10">player10: </label>
+                <input type="text" name="team1_player10">
+                <label for="team1_player10_role">Role: </label>
+                <select name="team1_player10_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team1_player11">player11: </label>
+                <input type="text" name="team1_player11">
+                <label for="team1_player11_role">Role: </label>
+                <select name="team1_player11_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select> -->
+            </div>
+            <div class="second_div">
+                For Team 2
+                <br><br>
+                <label for="team_select">Team: </label>
+                <select name="team_select">
+                    <option value="">Select team:</option>
+                    <option value="Team 1">Team 1</option>
+                    <option value="Team 2">Team 2</option>
+                </select>
+                <br><br>
+                <label for="team2_name">Enter team 2 name: </label>
+                <input type="text" name="team2_name" required>
+                <br><br>
+                <label for="team2_coach">Enter team 2 coach: </label>
+                <input type="text" name="team2_coach" required>
+                <br><br>
+                <label for="team2_homeground">Enter team 2 homeground: </label>
+                <input type="text" name="team2_homeground" required>
+                <br><br>
+                <span>Enter player name:</span>
+                <br><br>
+                <label for="team2_player1">player1: </label>
+                <input type="text" name="team2_player1">
+                <label for="team2_player1_role">Role: </label>
+                <select name="team2_player1_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team2_player2">player2: </label>
+                <input type="text" name="team2_player2">
+                <label for="team2_player2_role">Role: </label>
+                <select name="team2_player2_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team2_player3">player3: </label>
+                <input type="text" name="team2_player3">
+                <label for="team2_player3_role">Role: </label>
+                <select name="team2_player3_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <!-- <br><br>
+                <label for="team2_player4">player4: </label>
+                <input type="text" name="team2_player4">
+                <label for="team2_player4_role">Role: </label>
+                <select name="team2_player4_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team2_player5">player5: </label>
+                <input type="text" name="team2_player5">
+                <label for="team2_player5_role">Role: </label>
+                <select name="team2_player5_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team2_player6">player6</label>
+                <input type="text" name="team2_player6">
+                <label for="team2_player6_role">Role: </label>
+                <select name="team2_player6_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team2_player7">player7: </label>
+                <input type="text" name="team2_player7">
+                <label for="team2_player7_role">Role: </label>
+                <select name="team2_player7_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team2_player8">player8: </label>
+                <input type="text" name="team2_player8">
+                <label for="team2_player8_role">Role: </label>
+                <select name="team2_player8_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team2_player9">player9: </label>
+                <input type="text" name="team2_player9">
+                <label for="team2_player9_role">Role: </label>
+                <select name="team2_player9_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team2_player10">player10: </label>
+                <input type="text" name="team2_player10">
+                <label for="team2_player10_role">Role: </label>
+                <select name="team2_player10_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select>
+                <br><br>
+                <label for="team2_player11">player11: </label>
+                <input type="text" name="team2_player11">
+                <label for="team2_player11_role">Role: </label>
+                <select name="team2_player11_role">
+                    <option value="">Select role:</option>
+                    <option value="BT">Batsman</option>
+                    <option value="B">Bowler</option>
+                    <option value="AR">All rounder</option>
+                </select> -->
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
