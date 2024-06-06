@@ -10,6 +10,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('help/', views.help, name='help'),
     path('add_match', views.add_match, name='add_match'),
-    path('scoreboard/', views.scoreboard, name='scoreboard'),
+    path('scoreboard/matchnumber<int:match_number>/', views.scoreboard_view, name='scoreboard'),
+    path('scoreboard/toss/matchnumber<int:match_number>/', views.toss, name='toss')
 
 ]
