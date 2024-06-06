@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toss</title>
+</head>
+<body>
+    <form action="post">
+        <div class="match_number">
+            <label for="match_number">Enter match number: </label>
+            <input type="text" name="match_number" value="{{match_number}}">
+        </div>
+        <div class="main_div">
+            <div class="first_div">
+                <label for="team1_choice">Choose an option({{team1_name}}): </label>
+                <select name="team1_choice">
+                    <option value="Head">Head</option>
+                    <option value="Tail">Tail</option>
+                </select>
+            </div>
+            <div class="second_div">
+                <label for="team1_choice">Choose an option({{team2_name}}): </label>
+                <select name="team1_choice">
+                    <option value="Head">Head</option>
+                    <option value="Tail">Tail</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
