@@ -3,10 +3,15 @@ from django.db import models
 # Create your models here.
 
 class Match(models.Model):
+    toss_choices = [
+        ('Head', 'Head'),
+        ('Tail', 'Tail')
+    ]
     match_number = models.PositiveSmallIntegerField(unique = True, default=1, blank = False, null = True)
     match_date = models.DateField(auto_now_add = True, blank = False, null = True)
     match_location = models.CharField(max_length = 15, blank = False, null = True)
     match_over = models.IntegerField(blank = False, default=1)
+    match_toss = models.IntegerField(choices = toss_choices, blank = False, null = True)
 
 class Team(models.Model):
     team_number = [
@@ -38,3 +43,6 @@ class Score(models.Model):
     run = models.PositiveIntegerField()
     wickets = models.PositiveIntegerField()
     overs = models.PositiveIntegerField()
+    no_six = models.PositiveIntegerField(default=0)
+    no_four = models.PositiveIntegerField(default=0)
+    extra_runs = models.PositiveIntegerField(default=0)
