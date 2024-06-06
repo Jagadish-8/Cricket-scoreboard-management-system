@@ -86,13 +86,27 @@ def add_match(request):
                 )
                 player.save()
 
-        return redirect('scoreboard')
+        return redirect('toss', match_number = match_number)
 
     else:
         pass
     
     return render(request, 'add_match.html')
 
+def toss(request, match_number):
+    match = Match.objects.get(match_number = match_number)
+    teams = Team.objects.filter(match_number = match)
 
-def scoreboard(request):
+    team1_name = teams.filter(team_number=1).values_list('team_name', flat=True).first()
+    team2_name = teams.filter(team_number=2).values_list('team_name', flat=True).first()
+
+    context = {
+        'match_number' : match_number,
+        'match' : match,
+        'team1_name' : team1_name,
+        'team2_name' : team2_name,
+    }
+    return render(request, 'toss.html', context)
+
+def scoreboard_view(request):
     return render(request, "scoreboard.html")
