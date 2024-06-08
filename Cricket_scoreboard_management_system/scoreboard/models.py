@@ -4,25 +4,30 @@ from django.db import models
 
 class Match(models.Model):
     toss_choices = [
-        ('Head', 'Head'),
-        ('Tail', 'Tail')
+        ('Team 1', 'Team 1'),
+        ('Team 2', 'Team 2')
     ]
     match_number = models.PositiveSmallIntegerField(unique = True, default=1, blank = False, null = True)
     match_date = models.DateField(auto_now_add = True, blank = False, null = True)
     match_location = models.CharField(max_length = 15, blank = False, null = True)
     match_over = models.IntegerField(blank = False, default=1)
-    match_toss = models.IntegerField(choices = toss_choices, blank = False, null = True)
+    match_toss = models.CharField(choices = toss_choices, blank = False, null = True, max_length=10)
 
 class Team(models.Model):
     team_number = [
         (1, 'Team 1'),
         (2, 'Team 2'),
     ]
+    team_choice = [
+        ('Head', 'Head'),
+        ('Tail', 'Tail')
+    ]
     match_number = models.ForeignKey(Match, on_delete = models.CASCADE, blank = False, null = True, default = 1)
     team_name = models.CharField(max_length =20, blank = False, null = True)
     team_coach = models.CharField(max_length = 10, blank = False, null = True)
     team_homeground = models.CharField(max_length = 15, blank = True, null = True)
     team_number = models.IntegerField(default = 1, choices = team_number)
+    team_choice = models.CharField(choices=team_choice, max_length=4,blank=False, null=True)
 
 class Player(models.Model):
     role = [
