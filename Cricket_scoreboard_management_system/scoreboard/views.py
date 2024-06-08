@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import Match, Team, Player, Score
-from django.contrib import messages
+from .toss import toss
+from django.urls import reverse
 
 # Create your views here.
 
@@ -99,6 +100,22 @@ def toss(request, match_number):
 
     team1_name = teams.filter(team_number=1).values_list('team_name', flat=True).first()
     team2_name = teams.filter(team_number=2).values_list('team_name', flat=True).first()
+    if request.method == 'POST':
+        team1_choice = request.POST.get('team1_choice')
+        team2_choice = request.POST.get('team2_choice')
+
+        # Determine the toss winner based on team choices
+        toss_winner = 'Team 1' if team1_choice == 'Head' else 'Team 2'
+
+        match.match_toss = toss_winner
+        match.save()
+
+        # Redirect to the scoreboard URL with the match number and team name
+        redirect_url = f'/scoreboard/matchnumber{match_number}/{team1_name if toss_winner == "Team 1" else team2_name}/'
+        return redirect('scoreboard', match_number = match_number, team_name = team1_name if toss_winner == "Team 1" else team2_name)
+    
+    else:
+        pass
 
     context = {
         'match_number' : match_number,
@@ -106,7 +123,8 @@ def toss(request, match_number):
         'team1_name' : team1_name,
         'team2_name' : team2_name,
     }
+
     return render(request, 'toss.html', context)
 
-def scoreboard_view(request):
-    return render(request, "scoreboard.html")
+def scoreboard(request, match_number, team_name):
+    return HttpResponse("Hello there bct")
