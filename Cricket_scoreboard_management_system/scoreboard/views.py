@@ -51,12 +51,14 @@ def add_match(request):
         for i in range(1, 4):
             player_name = request.POST.get(f'team1_player{i}')
             player_role = request.POST.get(f'team1_player{i}_role')
+            player_number = i
             if player_name:
                 player = Player(
                     player_team = team1,
                     player_name = player_name,
                     match_number = match,
-                    player_role = player_role
+                    player_role = player_role,
+                    player_number = player_number
                 )
                 player.save()
 
