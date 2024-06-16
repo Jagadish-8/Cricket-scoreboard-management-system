@@ -12,6 +12,4 @@ urlpatterns = [
     path('add_match', views.add_match, name='add_match'),
     path('scoreboard/toss/matchnumber<int:match_number>/', views.toss, name='toss'),
     path('scoreboard/matchnumber<int:match_number>/<str:team_name>', views.scoreboard, name='scoreboard'),
-    
-
 ]
