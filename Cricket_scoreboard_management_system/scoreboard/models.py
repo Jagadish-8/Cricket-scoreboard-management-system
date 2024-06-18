@@ -40,7 +40,7 @@ class Player(models.Model):
     match_number = models.ForeignKey(Match, on_delete = models.CASCADE, blank = False, null = True, default = 1)
     player_role = models.CharField(max_length = 2, choices = role)
     player_availabel = models.BooleanField(default = True)
-    player_number = models.IntegerField()
+    player_number = models.IntegerField(null=True)
 
 
 class Score(models.Model):
