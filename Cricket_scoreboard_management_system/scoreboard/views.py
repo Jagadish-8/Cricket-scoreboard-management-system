@@ -80,12 +80,14 @@ def add_match(request):
         for i in range(1, 4):
             player_name = request.POST.get(f'team2_player{i}')
             player_role = request.POST.get(f'team2_player{i}_role')
+            player_number = i
             if player_name:
                 player = Player(
                     player_team = team2,
                     player_name = player_name,
                     match_number = match,
-                    player_role = player_role
+                    player_role = player_role,
+                    player_number = player_number
                 )
                 player.save()
 
@@ -129,4 +131,10 @@ def toss(request, match_number):
     return render(request, 'toss.html', context)
 
 def scoreboard(request, match_number, team_name):
-    return HttpResponse("Hello there bct")
+    match_number = match_number
+    team_name = team_name
+    context = {
+        'match_number' : match_number,
+        'team_name' : team_name
+    }
+    return render(request, 'scoreboard.html', context)
