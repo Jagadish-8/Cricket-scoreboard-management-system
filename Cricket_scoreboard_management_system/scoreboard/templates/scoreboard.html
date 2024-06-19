@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scoreboard</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .first_div {
+            flex: 1;
+        }
+
+        .second_div {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
     <nav>
-        <h3>Match Number: {{ match_number }}</h3>
-        <h3>Team playing: {{ team_name }}</h3>
-        <hr>
-    </nav>
-    
+    <div class="container">
+        <div class="first_div">
+            <h3>Match Number: {{ match_number }}</h3>
+            <h3>Team playing: {{ team_name }}</h3>
+        </div> 
+        <div class="second_div">
+            <h3><span>Over: </span></h3>
+        </div>
+    </div>
+</nav>
+
 </body>
 </html>
